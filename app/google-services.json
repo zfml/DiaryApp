@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1086657688120",
+    "project_id": "diaryapp-fda85",
+    "storage_bucket": "diaryapp-fda85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086657688120:android:c45467d3e30466bd99eccd",
+        "android_client_info": {
+          "package_name": "com.example.diaryapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKcK7WDlRuBfC4ZbC2qYh0kVnWCBfQM4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
