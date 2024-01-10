@@ -58,47 +58,54 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
-    implementation("androidx.activity:activity-compose:1.7.0")
-    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3:1.1.2")
+
+
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.ui)
+    implementation(libs.compose.ui.graphics)
+    implementation(libs.compose.ui.tooling.preview)
+    implementation(libs.compose.material3)
+
+
+    implementation(libs.core.ktx)
+    implementation(libs.lifecycle.runtime)
+    implementation(libs.activity.compose)
+    // Lifecycle utilities for Compose
+    implementation (libs.runtime.compose)
 
     //Room
-    implementation ("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
-
-    implementation("com.google.firebase:firebase-auth:22.3.0")
-    implementation("com.google.firebase:firebase-storage:20.3.0")
-    annotationProcessor ("androidx.room:room-compiler:2.6.1")
-
+    implementation (libs.room.runtime)
+    implementation(libs.room.ktx)
     // To use Kotlin annotation processing tool (kapt)
-    kapt ("androidx.room:room-compiler:2.6.1")
+    kapt (libs.room.compiler)
+    annotationProcessor (libs.room.compiler)
 
-    // Lifecycle utilities for Compose
-    implementation ("androidx.lifecycle:lifecycle-runtime-compose:2.6.2")
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.storage)
+
+
+
+
+
 
     //Splash Api
-    implementation("androidx.core:core-splashscreen:1.0.1")
+    implementation(libs.splash.api)
 
     //Dagger Hilt
-    implementation("com.google.dagger:hilt-android:2.49")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
-    implementation ("androidx.hilt:hilt-navigation-compose:1.2.0-alpha01")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    implementation (libs.hilt.navigation.compose)
 
     // Coil
-    implementation ("io.coil-kt:coil-compose:2.3.0")
+    implementation (libs.coil)
 
     // Mongo DB Realm
-    implementation ("io.realm.kotlin:library-base:1.11.0")
-    implementation ("io.realm.kotlin:library-sync:1.11.0")
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation (libs.realm.base)
+    implementation (libs.realm.syn)
+    implementation (libs.core.ktx)
 
     // Jetpack Compose Integration
-    implementation ("androidx.navigation:navigation-compose:2.7.6")
+    implementation (libs.navigation.compose)
 
     // Message Bar Compose
     implementation ("com.github.stevdza-san:MessageBarCompose:1.0.5")

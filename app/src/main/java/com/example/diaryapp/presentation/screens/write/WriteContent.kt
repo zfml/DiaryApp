@@ -130,7 +130,6 @@ fun WriteContent(
                 colors = TextFieldDefaults.textFieldColors(
                     containerColor = Color.Transparent,
                     focusedIndicatorColor = Color.Transparent,
-                    disabledSuffixColor = Color.Unspecified,
                     unfocusedIndicatorColor = Color.Unspecified,
                     disabledPlaceholderColor = MaterialTheme.colorScheme.onSurface.copy(0.38f)
 
@@ -158,7 +157,6 @@ fun WriteContent(
                 colors = TextFieldDefaults.textFieldColors(
                     containerColor = Color.Transparent,
                     focusedIndicatorColor = Color.Transparent,
-                    disabledSuffixColor = Color.Unspecified,
                     unfocusedIndicatorColor = Color.Unspecified,
                     disabledPlaceholderColor = MaterialTheme.colorScheme.onSurface.copy(0.38f)
 
