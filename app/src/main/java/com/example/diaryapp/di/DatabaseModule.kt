@@ -2,9 +2,9 @@ package com.example.diaryapp.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.diaryapp.connectivity.NetworkConnectivityObserver
-import com.example.diaryapp.data.database.ImageDatabase
-import com.example.diaryapp.util.Constants.IMAGES_DATABASE
+import com.example.util.Constants.IMAGES_DATABASE
+import com.example.util.connectivity.NetworkConnectivityObserver
+
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,21 +20,21 @@ object DatabaseModule {
     @Singleton
     fun provideDatabase(
        @ApplicationContext context: Context
-    ): ImageDatabase {
+    ): com.example.mongo.database.ImageDatabase {
         return Room.databaseBuilder(
             context = context,
-            klass = ImageDatabase::class.java,
+            klass = com.example.mongo.database.ImageDatabase::class.java,
             name = IMAGES_DATABASE
         ).build()
     }
 
     @Singleton
     @Provides
-    fun provideFirstDao(database: ImageDatabase) = database.imageToUploadDao()
+    fun provideFirstDao(database: com.example.mongo.database.ImageDatabase) = database.imageToUploadDao()
 
     @Singleton
     @Provides
-    fun provideSecondDao(database: ImageDatabase) = database.imageToDeleteDao()
+    fun provideSecondDao(database: com.example.mongo.database.ImageDatabase) = database.imageToDeleteDao()
 
     @Singleton
     @Provides

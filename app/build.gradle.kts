@@ -73,36 +73,38 @@ dependencies {
     // Lifecycle utilities for Compose
     implementation (libs.runtime.compose)
 
-    //Room
-    implementation (libs.room.runtime)
-    implementation(libs.room.ktx)
-    // To use Kotlin annotation processing tool (kapt)
-    kapt (libs.room.compiler)
+
     annotationProcessor (libs.room.compiler)
 
     implementation(libs.firebase.auth)
     implementation(libs.firebase.storage)
 
+    //Room
+    implementation (libs.room.runtime)
+    implementation(libs.room.ktx)
+    // To use Kotlin annotation processing tool (kapt)
+    kapt (libs.room.compiler)
+    //Dagger Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    implementation (libs.hilt.navigation.compose)
 
-
+    // Mongo DB Realm
+    implementation (libs.realm.base)
+    implementation (libs.realm.syn)
+    implementation (libs.core.ktx)
 
 
 
     //Splash Api
     implementation(libs.splash.api)
 
-    //Dagger Hilt
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
-    implementation (libs.hilt.navigation.compose)
+
 
     // Coil
     implementation (libs.coil)
 
-    // Mongo DB Realm
-    implementation (libs.realm.base)
-    implementation (libs.realm.syn)
-    implementation (libs.core.ktx)
+
 
     // Jetpack Compose Integration
     implementation (libs.navigation.compose)
@@ -132,6 +134,14 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    implementation(project(":core:ui"))
+    implementation(project(":core:util"))
+
+    implementation(project(":data:mongo"))
+    implementation(project(":feature:auth"))
+    implementation(project(":feature:home"))
+    implementation(project(":feature:write"))
 }
 kapt {
     correctErrorTypes = true
